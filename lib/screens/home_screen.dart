@@ -7,6 +7,12 @@ import 'package:healthy_pet/models/service_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 var selectedService = 0;
+var menus = [
+  FeatherIcons.home,
+  FeatherIcons.heart,
+  FeatherIcons.messageCircle,
+  FeatherIcons.user
+];
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,31 +21,44 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
+        bottomNavigationBar: _bottomNavigationBar(),
         body: SafeArea(
             child: SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(height: 20),
-          _greetings(),
-          const SizedBox(
-            height: 16,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              _greetings(),
+              const SizedBox(
+                height: 16,
+              ),
+              _card(),
+              const SizedBox(
+                height: 21,
+              ),
+              _search(),
+              const SizedBox(
+                height: 20,
+              ),
+              _services(),
+              const SizedBox(
+                height: 27,
+              ),
+              _doctors()
+            ],
           ),
-          _card(),
-          const SizedBox(
-            height: 21,
-          ),
-          _search(),
-          const SizedBox(
-            height: 20,
-          ),
-          _services(),
-          const SizedBox(
-            height: 27,
-          ),
-          _doctors()
-        ],
-      ),
-    )));
+        )));
+  }
+
+  BottomNavigationBar _bottomNavigationBar() {
+    return BottomNavigationBar(
+      items: menus
+          .map((e) => BottomNavigationBarItem(icon: Icon(e), label: ''))
+          .toList(),
+      selectedItemColor: const Color(0xFF818AF9),
+      unselectedItemColor: const Color(0xFFACA3A3),
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+    );
   }
 
   ListView _doctors() {
