@@ -124,26 +124,22 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 7,
               ),
-              SizedBox(
-                height: 30,
-                width: double.maxFinite,
-                child: Row(
-                  children: [
-                    Text(
-                      'Available for',
-                      style: GoogleFonts.manrope(
-                          color: const Color(0xFF50CC98),
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Spacer(),
-                    SvgPicture.asset('assets/svgs/cat.svg'),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    SvgPicture.asset('assets/svgs/dog.svg'),
-                  ],
-                ),
+              Row(
+                children: [
+                  Text(
+                    'Available for',
+                    style: GoogleFonts.manrope(
+                        color: const Color(0xFF50CC98),
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const Spacer(),
+                  SvgPicture.asset('assets/svgs/cat.svg'),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  SvgPicture.asset('assets/svgs/dog.svg'),
+                ],
               )
             ],
           ),
