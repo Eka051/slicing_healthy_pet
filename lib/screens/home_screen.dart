@@ -16,27 +16,29 @@ class HomeScreen extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
         body: SafeArea(
-            child: Column(
-      children: [
-        const SizedBox(height: 20),
-        _greetings(),
-        const SizedBox(
-          height: 16,
-        ),
-        _card(),
-        const SizedBox(
-          height: 21,
-        ),
-        _search(),
-        const SizedBox(
-          height: 20,
-        ),
-        _services(),
-        const SizedBox(
-          height: 27,
-        ),
-        _doctors()
-      ],
+            child: SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          _greetings(),
+          const SizedBox(
+            height: 16,
+          ),
+          _card(),
+          const SizedBox(
+            height: 21,
+          ),
+          _search(),
+          const SizedBox(
+            height: 20,
+          ),
+          _services(),
+          const SizedBox(
+            height: 27,
+          ),
+          _doctors()
+        ],
+      ),
     )));
   }
 
